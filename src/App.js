@@ -1,25 +1,19 @@
-import logo from './logo.svg';
+
 import './App.css';
+import SignUp from './Pages/SignUp';
+import Login from './Pages/Login';
+import { BrowserRouter, Link, Outlet, useRoutes } from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <h3>Welcome to Banao Technology</h3>
+      const routes = useRoutes([
+        { path: '/', element: <SignUp />},
+        { path: '/Login', element: <Login /> },
+        { path: '/SignUp', element: <SignUp /> }
+         
+    ]);
+    return routes;
+
 }
 
 export default App;
